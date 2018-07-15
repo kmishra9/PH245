@@ -1,0 +1,22 @@
+---
+title: "PH245 Absentee Analysis"
+output: html_notebook
+---
+
+
+```{r}
+library(data.table)
+library(boot)
+filenames = c("absentee_all.csv",
+              "absentee-flu.csv", 
+              "absentee-nonflu.csv", 
+              "ILIData_CA_201101_201739.csv",
+              "absentee.RData"
+             )
+```
+```{r}
+# Loading Data (using high-speed data.tables)
+absenteeData = fread( file=filenames[1], stringsAsFactors=TRUE )
+```
+
+Check out the varImp function from the caret package (https://dataaspirant.com/2018/01/15/feature-selection-techniques-r/)
